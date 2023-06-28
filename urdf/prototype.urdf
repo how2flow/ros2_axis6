@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<robot name="visual">
+
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://axis6/meshes/base_link.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="box1">
+    <visual>
+      <origin xyz="0 0 -0.05"/>
+      <geometry>
+        <mesh filename="package://axis6/meshes/box1.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="ch0" type="revolute">
+    <parent link="base_link"/>
+    <child link="box1"/>
+    <origin rpy="0 0 0" xyz="0 0 0.05"/>
+    <axis rpy="0 0 0" xyz="0 0 1"/>
+    <limit effort="1000.0" lower="-0.785398" upper="1.57075" velocity="0.5"/>
+  </joint>
+
+  <link name="axis1">
+    <visual>
+      <origin xyz="0 0 -0.05"/>
+      <geometry>
+        <mesh filename="package://axis6/meshes/axis1.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="box1_to_axis1" type="fixed">
+    <parent link="box1"/>
+    <child link="axis1"/>
+  </joint>
+
+  <link name="frame2-1">
+    <visual>
+      <origin xyz="0 0.04 -0.07"/>
+      <geometry>
+        <mesh filename="package://axis6/meshes/frame2-1.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="ch1" type="revolute">
+    <parent link="axis1"/>
+    <child link="frame2-1"/>
+    <origin rpy="0 0 0" xyz="0 -0.04 0.02"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1000.0" lower="-0.785398" upper="1.57075" velocity="0.5"/>
+  </joint>
+
+  <link name="axis2">
+    <visual>
+      <origin xyz="0 0.04 -0.07"/>
+      <geometry>
+        <mesh filename="package://axis6/meshes/axis2.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="frame2-1_to_axis2" type="fixed">
+    <parent link="frame2-1"/>
+    <child link="axis2"/>
+  </joint>
+
+  <link name="box2">
+    <visual>
+      <origin xyz="0 0.04 -0.27"/>
+      <geometry>
+        <mesh filename="package://axis6/meshes/box2.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="ch2" type="revolute">
+    <parent link="axis2"/>
+    <child link="box2"/>
+    <origin xyz="0 0 0.2"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <limit effort="1000.0" lower="-0.785398" upper="1.57075" velocity="0.5"/>
+  </joint>
+
+  <link name="cylinder1">
+    <visual>
+      <origin xyz="0 0.04 -0.27"/>
+      <geometry>
+        <mesh filename="package://axis6/meshes/cylinder1.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="box2_to_cylinder1" type="fixed">
+    <parent link="box2"/>
+    <child link="cylinder1"/>
+  </joint>
+
+  <link name="box3">
+    <visual>
+      <origin xyz="0 0.04 -0.27"/>
+      <geometry>
+        <mesh filename="package://axis6/meshes/box3.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="cylinder1_to_box3" type="fixed">
+    <parent link="cylinder1"/>
+    <child link="box3"/>
+  </joint>
+
+  <link name="axis3">
+    <visual>
+      <origin xyz="0 0.04 -0.27"/>
+      <geometry>
+        <mesh filename="package://axis6/meshes/axis3.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="box3_to_axis3" type="fixed">
+    <parent link="box3"/>
+    <child link="axis3"/>
+  </joint>
+
+  <link name="frame1-1">
+    <visual>
+      <origin xyz="0.09518 0.04 -0.27"/>
+      <geometry>
+        <mesh filename="package://axis6/meshes/frame1-1.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="ch3" type="revolute">
+    <parent link="axis3"/>
+    <child link="frame1-1"/>
+    <origin rpy="0 0 0" xyz="-0.09 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1000.0" lower="0" upper="3.14" velocity="0.5"/>
+  </joint>
+
+  <link name="axis4">
+    <visual>
+      <origin xyz="0.09 0.04 -0.27"/>
+      <geometry>
+        <mesh filename="package://axis6/meshes/axis4.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="frame1-1_to_axis4" type="fixed">
+    <parent link="frame1-1"/>
+    <child link="axis4"/>
+  </joint>
+
+  <link name="box4">
+    <visual>
+      <origin xyz="0.09 0.04 -0.27"/>
+      <geometry>
+        <mesh filename="package://axis6/meshes/box4.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="axis4_to_box4" type="fixed">
+    <parent link="axis4"/>
+    <child link="box4"/>
+  </joint>
+
+  <link name="axis5">
+    <visual>
+      <origin xyz="0.09 0.04 -0.27"/>
+      <geometry>
+        <mesh filename="package://axis6/meshes/axis5.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="box4_to_axis5" type="fixed">
+    <parent link="box4"/>
+    <child link="axis5"/>
+  </joint>
+
+  <link name="end_effector">
+    <visual>
+      <origin xyz="0.09 0 -0.11"/>
+      <geometry>
+        <mesh filename="package://axis6/meshes/end_effector.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="ch4" type="revolute">
+    <parent link="axis5"/>
+    <child link="end_effector"/>
+    <origin xyz="0 0.04 -0.16"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="0" upper="3.14" velocity="0.5"/>
+  </joint>
+
+</robot>

@@ -1,0 +1,3 @@
+[submodule "how2flow_interfaces"]
+	path = how2flow_interfaces
+	url = https://github.com/how2flow/ros2_how2flow_interfaces.git
