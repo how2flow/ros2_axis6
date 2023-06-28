@@ -23,7 +23,7 @@
     <child link="box1"/>
     <origin rpy="0 0 0" xyz="0 0 0.05"/>
     <axis rpy="0 0 0" xyz="0 0 1"/>
-    <limit effort="1000.0" lower="-0.785398" upper="1.57075" velocity="0.5"/>
+    <limit effort="1000.0" lower="-1.26" upper="1.26" velocity="0.5"/>
   </joint>
 
   <link name="axis1">
@@ -54,7 +54,7 @@
     <child link="frame2-1"/>
     <origin rpy="0 0 0" xyz="0 -0.04 0.02"/>
     <axis xyz="0 1 0"/>
-    <limit effort="1000.0" lower="-0.785398" upper="1.57075" velocity="0.5"/>
+    <limit effort="1000.0" lower="-1.26" upper="1.26" velocity="0.5"/>
   </joint>
 
   <link name="axis2">
@@ -85,7 +85,7 @@
     <child link="box2"/>
     <origin xyz="0 0 0.2"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
-    <limit effort="1000.0" lower="-0.785398" upper="1.57075" velocity="0.5"/>
+    <limit effort="1000.0" lower="-1.26" upper="1.26" velocity="0.5"/>
   </joint>
 
   <link name="cylinder1">
@@ -144,7 +144,7 @@
     <child link="frame1-1"/>
     <origin rpy="0 0 0" xyz="-0.09 0 0"/>
     <axis xyz="0 1 0"/>
-    <limit effort="1000.0" lower="0" upper="3.14" velocity="0.5"/>
+    <limit effort="1000.0" lower="-1.26" upper="1.26" velocity="0.5"/>
   </joint>
 
   <link name="axis4">
@@ -203,7 +203,7 @@
     <child link="end_effector"/>
     <origin xyz="0 0.04 -0.16"/>
     <axis xyz="0 0 1"/>
-    <limit effort="1000.0" lower="0" upper="3.14" velocity="0.5"/>
+    <limit effort="1000.0" lower="-1.26" upper="1.26" velocity="0.5"/>
   </joint>
 
 </robot>

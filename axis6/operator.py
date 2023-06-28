@@ -69,7 +69,7 @@ class Axis6Operator(Node):
         self.res = 0
         self.mode = NORMAL
         self.neutral = OFF
-        self.step = 0.2618 # 15 x (pi / 180)
+        self.step = 0.31415 # 18 x (pi / 180)
 
         # odroid_wiringpi
         wpi.wiringPiSetup()
@@ -162,7 +162,7 @@ class Axis6Operator(Node):
                 elif (abs(ADC_MAX - y) < ADC_ERR): # down
                     self.motor[ch] -= self.dir[ch]
 
-        if (abs(BASIC_POS - self.motor[ch]) > 1):
+        if (abs(BASIC_POS - self.motor[ch]) > 4):
             self.motor[ch] = orig_pos
 
     def motor_control(self, ch, pos):
@@ -214,7 +214,7 @@ class Axis6Operator(Node):
         if (self.mode == DISPLAY):
             for i in range(len(DIP_PINS) - 1): # except gripper
                 self.motor[i] = self.convert_step(i, msg.position[i])
-                if (abs(BASIC_POS - self.motor[i]) < 3):
+                if (abs(BASIC_POS - self.motor[i]) < 5):
                     self.motor_control(i, self.motor[i])
 
     def convert_step(self, ch, rad):
