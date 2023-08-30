@@ -19,7 +19,7 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='how2flow',
-    maintainer_email='how2soft@gmail.com',
+    maintainer_email='steve@how2flow.net',
     description='Control 6-axis robot with pca9685 (motor: MG996R)',
     license='Apache 2.0, The MIT',
     tests_require=['pytest'],

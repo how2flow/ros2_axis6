@@ -4,7 +4,7 @@
   <name>axis6</name>
   <version>0.0.0</version>
   <description>Control 6-axis robot with pca9685 (motor: MG996R)</description>
-  <maintainer email="how2soft@gmail.com">how2flow</maintainer>
+  <maintainer email="steve@how2flow.net">how2flow</maintainer>
   <license>Apache 2.0, The MIT</license>
 
   <depend>rclpy</depend>
